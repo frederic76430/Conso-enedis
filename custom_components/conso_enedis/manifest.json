@@ -1,0 +1,12 @@
+{
+  "domain": "conso_enedis",
+  "name": "Conso Enedis",
+  "codeowners": ["@frederic76430"],
+  "config_flow": true,
+  "documentation": "https://github.com/frederic76430/conso-enedis",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/frederic76430/conso-enedis/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

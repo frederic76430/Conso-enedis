@@ -1,0 +1,99 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Linky meter",
+        "description": "Paste the token obtained on conso.boris.sh after giving consent on your Enedis account. It is the same token as the ha-linky add-on.",
+        "data": {
+          "token": "Conso API token"
+        }
+      },
+      "prm": {
+        "title": "Meter",
+        "description": "This token gives access to several meters. Which one should be added?",
+        "data": {
+          "prm": "PRM (delivery point)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "New token",
+        "description": "The token for meter {prm} was refused (expired or revoked). Paste a new token from conso.boris.sh.",
+        "data": {
+          "token": "Conso API token"
+        }
+      }
+    },
+    "error": {
+      "invalid_token": "This is not a Conso API token.",
+      "invalid_auth": "Token refused by Conso API.",
+      "cannot_connect": "Cannot reach Conso API, try again later.",
+      "wrong_prm": "This token does not give access to this meter.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This meter is already configured.",
+      "reauth_successful": "Token updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "description": "Off-peak ranges split the half-hourly load curve into peak / off-peak. Example: 22:00-06:00 or 01:30-07:30; 12:30-14:30. Leave empty if you have no off-peak hours.",
+        "data": {
+          "production": "I export to the grid (solar panels)",
+          "plages_hc": "Off-peak ranges"
+        }
+      }
+    },
+    "error": {
+      "invalid_plages": "Invalid range. Format: 22:00-06:00, several ranges separated by ;"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "consommation_jour": {
+        "name": "Consumption day"
+      },
+      "consommation_mois": {
+        "name": "Consumption month"
+      },
+      "consommation_mois_dernier": {
+        "name": "Consumption last month"
+      },
+      "consommation_annee": {
+        "name": "Consumption year"
+      },
+      "injection_jour": {
+        "name": "Export day"
+      },
+      "injection_mois": {
+        "name": "Export month"
+      },
+      "injection_mois_dernier": {
+        "name": "Export last month"
+      },
+      "injection_annee": {
+        "name": "Export year"
+      },
+      "heures_pleines_jour": {
+        "name": "Peak hours day"
+      },
+      "heures_creuses_jour": {
+        "name": "Off-peak hours day"
+      },
+      "heures_pleines_mois": {
+        "name": "Peak hours month"
+      },
+      "heures_creuses_mois": {
+        "name": "Off-peak hours month"
+      },
+      "puissance_max_jour": {
+        "name": "Max power day"
+      },
+      "derniere_lecture": {
+        "name": "Last read"
+      }
+    }
+  }
+}

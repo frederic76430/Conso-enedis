@@ -1,0 +1,99 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Compteur Linky",
+        "description": "Colle le jeton obtenu sur conso.boris.sh après avoir donné ton accord sur ton espace client Enedis. C'est le même jeton que celui de l'add-on ha-linky.",
+        "data": {
+          "token": "Jeton Conso API"
+        }
+      },
+      "prm": {
+        "title": "Choix du compteur",
+        "description": "Ce jeton donne accès à plusieurs compteurs. Lequel ajouter ?",
+        "data": {
+          "prm": "PRM (point de livraison)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Nouveau jeton",
+        "description": "Le jeton du compteur {prm} est refusé (expiré ou révoqué). Colle un nouveau jeton obtenu sur conso.boris.sh.",
+        "data": {
+          "token": "Jeton Conso API"
+        }
+      }
+    },
+    "error": {
+      "invalid_token": "Ce texte n'est pas un jeton Conso API.",
+      "invalid_auth": "Jeton refusé par Conso API.",
+      "cannot_connect": "Impossible de joindre Conso API, réessaie plus tard.",
+      "wrong_prm": "Ce jeton ne donne pas accès à ce compteur.",
+      "unknown": "Erreur inattendue."
+    },
+    "abort": {
+      "already_configured": "Ce compteur est déjà configuré.",
+      "reauth_successful": "Jeton mis à jour."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "description": "Les heures creuses servent à répartir la courbe de charge par demi-heure entre HP et HC. Exemple : 22:00-06:00 ou 01:30-07:30; 12:30-14:30. Laisse vide si tu n'as pas d'heures creuses.",
+        "data": {
+          "production": "J'injecte sur le réseau (panneaux solaires)",
+          "plages_hc": "Plages d'heures creuses"
+        }
+      }
+    },
+    "error": {
+      "invalid_plages": "Plage mal écrite. Format : 22:00-06:00, plusieurs plages séparées par ;"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "consommation_jour": {
+        "name": "Consommation jour"
+      },
+      "consommation_mois": {
+        "name": "Consommation mois"
+      },
+      "consommation_mois_dernier": {
+        "name": "Consommation mois dernier"
+      },
+      "consommation_annee": {
+        "name": "Consommation année"
+      },
+      "injection_jour": {
+        "name": "Injection jour"
+      },
+      "injection_mois": {
+        "name": "Injection mois"
+      },
+      "injection_mois_dernier": {
+        "name": "Injection mois dernier"
+      },
+      "injection_annee": {
+        "name": "Injection année"
+      },
+      "heures_pleines_jour": {
+        "name": "Heures pleines jour"
+      },
+      "heures_creuses_jour": {
+        "name": "Heures creuses jour"
+      },
+      "heures_pleines_mois": {
+        "name": "Heures pleines mois"
+      },
+      "heures_creuses_mois": {
+        "name": "Heures creuses mois"
+      },
+      "puissance_max_jour": {
+        "name": "Puissance max jour"
+      },
+      "derniere_lecture": {
+        "name": "Dernière lecture"
+      }
+    }
+  }
+}
