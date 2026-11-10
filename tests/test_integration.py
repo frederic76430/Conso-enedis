@@ -55,7 +55,7 @@ class FauxEnedis:
             return quotidien(debut, fin, lambda j: 2000)  # 2 kWh par jour
         if ressource == "puissance_conso_max_quotidienne":
             return {"grandeur": [{"points": [{"v": "5960", "d": f"{self.dernier.isoformat()} 19:42:11"}]}]}
-        if ressource == "courbe_de_charge_consommation":
+        if ressource in ("courbe_de_charge_consommation", "courbe_de_charge_production"):
             pts, t = [], datetime.combine(debut, datetime.min.time())
             while t.date() < fin:
                 t += timedelta(minutes=30)

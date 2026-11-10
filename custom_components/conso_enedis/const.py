@@ -7,12 +7,13 @@ MANUFACTURER = "Enedis"
 MODEL = "Compteur Linky"
 
 API_HOST = "https://conso.boris.sh"
-USER_AGENT = "ha-conso-enedis/0.1.0 (+https://github.com/frederic76430/conso-enedis)"
+USER_AGENT = "ha-conso-enedis/0.2.0 (+https://github.com/frederic76430/conso-enedis)"
 
 CONF_TOKEN = "token"
 CONF_PRM = "prm"
 CONF_PRODUCTION = "production"
 CONF_PLAGES_HC = "plages_hc"
+CONF_STATISTIQUES = "statistiques"
 
 # Heures de relecture (heure locale). Enedis publie les données de la veille dans la
 # matinée : la première relecture suffit en général, les suivantes rattrapent les retards.

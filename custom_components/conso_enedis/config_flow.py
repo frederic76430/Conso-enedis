@@ -34,7 +34,14 @@ from .api import (
     TokenInvalide,
     prms_du_jeton,
 )
-from .const import CONF_PLAGES_HC, CONF_PRM, CONF_PRODUCTION, CONF_TOKEN, DOMAIN
+from .const import (
+    CONF_PLAGES_HC,
+    CONF_PRM,
+    CONF_PRODUCTION,
+    CONF_STATISTIQUES,
+    CONF_TOKEN,
+    DOMAIN,
+)
 from .donnees import parse_plages
 
 _LOGGER = logging.getLogger(__name__)
@@ -72,7 +79,7 @@ class ConsoEnedisConfigFlow(ConfigFlow, domain=DOMAIN):
         return self.async_create_entry(
             title=f"Linky {prm}",
             data={CONF_TOKEN: self._token, CONF_PRM: prm},
-            options={CONF_PRODUCTION: False, CONF_PLAGES_HC: ""},
+            options={CONF_PRODUCTION: False, CONF_PLAGES_HC: "", CONF_STATISTIQUES: False},
         )
 
     async def async_step_user(self, user_input: dict[str, Any] | None = None) -> ConfigFlowResult:
@@ -162,12 +169,19 @@ class ConsoEnedisOptionsFlow(OptionsFlow):
                 errors[CONF_PLAGES_HC] = "invalid_plages"
             else:
                 return self.async_create_entry(
-                    data={CONF_PRODUCTION: user_input[CONF_PRODUCTION], CONF_PLAGES_HC: plages}
+                    data={
+                        CONF_PRODUCTION: user_input[CONF_PRODUCTION],
+                        CONF_PLAGES_HC: plages,
+                        CONF_STATISTIQUES: user_input.get(CONF_STATISTIQUES, False),
+                    }
                 )
         options = {**self.config_entry.options, **(user_input or {})}
         schema = vol.Schema(
             {
                 vol.Required(CONF_PRODUCTION, default=options.get(CONF_PRODUCTION, False)): BooleanSelector(),
+                vol.Required(
+                    CONF_STATISTIQUES, default=options.get(CONF_STATISTIQUES, False)
+                ): BooleanSelector(),
                 vol.Optional(
                     CONF_PLAGES_HC, description={"suggested_value": options.get(CONF_PLAGES_HC, "")}
                 ): TextSelector(),
