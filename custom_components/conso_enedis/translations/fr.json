@@ -39,7 +39,7 @@
     "step": {
       "init": {
         "title": "Options",
-        "description": "Les heures creuses servent à répartir la courbe de charge par demi-heure entre HP et HC. Exemple : 22:00-06:00 ou 01:30-07:30; 12:30-14:30. Laisse vide si tu n'as pas d'heures creuses. Statistiques : écrit linky:<PRM> et linky_prod:<PRM> heure par heure, comme ha-linky, en reprenant là où il s'est arrêté. Arrête ha-linky avant de cocher.",
+        "description": "Les heures creuses servent à répartir la courbe de charge par demi-heure entre HP et HC. Exemple : 22:00-06:00 ou 01:30-07:30; 12:30-14:30. Laisse vide si tu n'as pas d'heures creuses. Statistiques : écrit linky:PRM et linky_prod:PRM heure par heure, comme ha-linky, en reprenant là où il s'est arrêté. Arrête ha-linky avant de cocher.",
         "data": {
           "production": "J'injecte sur le réseau (panneaux solaires)",
           "plages_hc": "Plages d'heures creuses",

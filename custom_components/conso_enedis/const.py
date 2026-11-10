@@ -7,7 +7,7 @@ MANUFACTURER = "Enedis"
 MODEL = "Compteur Linky"
 
 API_HOST = "https://conso.boris.sh"
-USER_AGENT = "ha-conso-enedis/0.2.0 (+https://github.com/frederic76430/conso-enedis)"
+USER_AGENT = "ha-conso-enedis/0.2.1 (+https://github.com/frederic76430/conso-enedis)"
 
 CONF_TOKEN = "token"
 CONF_PRM = "prm"

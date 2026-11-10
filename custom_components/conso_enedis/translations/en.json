@@ -39,7 +39,7 @@
     "step": {
       "init": {
         "title": "Options",
-        "description": "Off-peak ranges split the half-hourly load curve into peak / off-peak. Example: 22:00-06:00 or 01:30-07:30; 12:30-14:30. Leave empty if you have no off-peak hours. Statistics: writes linky:<PRM> and linky_prod:<PRM> hourly like ha-linky, continuing where it stopped. Stop ha-linky before enabling.",
+        "description": "Off-peak ranges split the half-hourly load curve into peak / off-peak. Example: 22:00-06:00 or 01:30-07:30; 12:30-14:30. Leave empty if you have no off-peak hours. Statistics: writes linky:PRM and linky_prod:PRM hourly like ha-linky, continuing where it stopped. Stop ha-linky before enabling.",
         "data": {
           "production": "I export to the grid (solar panels)",
           "plages_hc": "Off-peak ranges",
